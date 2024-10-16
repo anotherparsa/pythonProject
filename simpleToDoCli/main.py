@@ -2,7 +2,7 @@ todos = []
 user_input = ""
 
 while user_input != "exit":
-    user_input = input("What do you want to do? 1-Add 2-Show 3-Edit 4-Exit ").strip()
+    user_input = input("What do you want to do? 1-Add 2-Show 3-Edit 4-Delete 5-Exit ").strip()
     match user_input:
         case "1":
             task = ""
@@ -24,5 +24,10 @@ while user_input != "exit":
                     todos[int(todo_number)-1] = updated_todo
                     print("done")
         case "4" :
+            todo_number = input("enter the number of the task you want to delete: type cancel to return ")
+            if todo_number != "cancel":
+                todos.pop(int(todo_number) - 1)
+                print("Done")
+        case "5" :
             print("Exiting....")
             exit()
