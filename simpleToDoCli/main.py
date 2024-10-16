@@ -1,5 +1,6 @@
 todos = []
 user_input = ""
+counter = 1
 
 
 while user_input != "exit":
@@ -12,13 +13,20 @@ while user_input != "exit":
                     task = input("what is your task? type done to return ").strip()
                     if task != "done":
                         todos.append(task)
-                        file.writelines(task+'\n')
-
+                        file.writelines(str(counter)+"- "+ task+'\n')
+                        counter += 1
+                    else:
+                        file.close()
 
         case "2" :
             print("Showing the tasks: ")
             for i in range(0, len(todos)):
                 print(f'number {i+1} task is {todos[i]}')
+            with open("todos.txt", "r") as file:
+                content = file.read()
+                print(content)
+                file.close()
+            
         case "3" :
             todo_number = input("enter the number of the task you want to edit: type canel to return ")
             if todo_number != "cancel":
