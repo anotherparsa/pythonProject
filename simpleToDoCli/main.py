@@ -2,7 +2,6 @@ todos = []
 user_input = ""
 counter = 1
 
-
 while user_input != "exit":
     user_input = input("What do you want to do? 1-Add 2-Show 3-Edit 4-Delete 5-Exit ").strip()
     match user_input:

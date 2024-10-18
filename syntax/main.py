@@ -1,18 +1,4 @@
-user_input = input("Enter a day ")
+def greet(name):
+    print(f'hello {name}')
 
-match user_input:
-    case "1" :
-        print("saturday")
-    case "2" : 
-        print("sunday")
-    case "3" : 
-        print("monday")
-    case "4":
-        print("tuesday")
-    case "5":
-        print("wednesday")
-    case "6":
-        print("thursday")
-    case "7":
-        print("friday")
-
+greet(input("what is your name? ").strip())
