@@ -4,3 +4,6 @@ from django.http import HttpResponse
 
 def index(request):
     return HttpResponse("Hello World")
+
+def dynamicdata(request, test):
+    return HttpResponse(f'This is {test}')
